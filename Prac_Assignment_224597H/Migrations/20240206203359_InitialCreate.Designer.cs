@@ -12,7 +12,7 @@ using Prac_Assignment_224597H.Model;
 namespace Prac_Assignment_224597H.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20240206152940_InitialCreate")]
+    [Migration("20240206203359_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

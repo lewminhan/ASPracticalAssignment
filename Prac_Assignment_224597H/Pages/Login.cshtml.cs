@@ -12,7 +12,7 @@ namespace Prac_Assignment_224597H.Pages
         public Login LModel { get; set; }
 
         private readonly SignInManager<ApplicationUser> signInManager;
-
+		
         public LoginModel(SignInManager<ApplicationUser> signInManager)
         {
             this.signInManager = signInManager;

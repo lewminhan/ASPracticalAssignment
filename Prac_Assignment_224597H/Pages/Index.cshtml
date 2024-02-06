@@ -5,6 +5,30 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Customer Data</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Mobile No</td>
+                <td>Credit Card No</td>
+                <td>Billing Address</td>
+                <td>Shipping Address</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.UserDetail.FirstName</td>
+                <td>@Model.UserDetail.LastName</td>
+                <td>@Model.UserDetail.Email</td>
+                <td>@Model.UserDetail.MobileNo</td>
+                <td>@ViewData["CreditCard"]</td>
+                <td>@Model.UserDetail.BillingAddress</td>
+                <td>@Model.UserDetail.ShippingAddress</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
