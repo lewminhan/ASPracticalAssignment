@@ -7,10 +7,12 @@ namespace Prac_Assignment_224597H.ViewModels
 
 		[Required]
 		[Display(Name = "First Name")]
-		public string FirstName { get; set; }
+        [DataType(DataType.Text)]
+        public string FirstName { get; set; }
 
 		[Required]
         [Display(Name = "Last Name")]
+        [DataType(DataType.Text)]
         public string LastName { get; set; }
 
 		[Required]
@@ -28,10 +30,12 @@ namespace Prac_Assignment_224597H.ViewModels
 
 		[Required]
         [Display(Name = "Billing Address")]
+        [DataType(DataType.Text)]
         public string BillingAddress { get; set; }
 
 		[Required]
         [Display(Name = "Shipping Address")]
+        [DataType(DataType.Text)]
         public string ShippingAddress { get; set; }
 
 		[Required]
