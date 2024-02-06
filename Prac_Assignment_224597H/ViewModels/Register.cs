@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prac_Assignment_224597H.ViewModels
 {
@@ -54,10 +55,11 @@ namespace Prac_Assignment_224597H.ViewModels
 		[Compare(nameof(Password), ErrorMessage = "Password and confirmation password does not match")]
 		public string ConfirmPassword { get; set; }
 
-		[Required]
-        [Display(Name = "Profile Picture")]
+		/*[Required]
+		[NotMapped]
+		[Display(Name = "Profile Picture")]
 		[DataType(DataType.Upload)]
 		[FileExtensions(Extensions = ".jpg", ErrorMessage = "Only .jpg files are allowed")]
-        public IFormFile Photo { get; set; }
-    }
+		public IFormFile Photo { get; set; }*/
+	}
 }
