@@ -15,12 +15,14 @@ namespace Prac_Assignment_224597H.ViewModels
 
 		[Required]
         [Display(Name = "Credit Card No")]
+        [RegularExpression(@"^\d{16}$", ErrorMessage = "Credit Card Number must be exactly 16 digits")]
         [DataType(DataType.CreditCard)]
 		public string CreditCard { get; set; }
 
 		[Required]
 		[Phone]
         [Display(Name = "Mobile No")]
+        [RegularExpression(@"^\d{8}$", ErrorMessage = "Mobile Number must be exactly 8 digits")]
         [DataType(DataType.PhoneNumber)]
 		public string MobileNo { get; set; }
 
