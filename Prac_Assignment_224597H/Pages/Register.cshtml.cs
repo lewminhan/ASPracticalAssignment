@@ -42,7 +42,8 @@ namespace Prac_Assignment_224597H.Pages
 					CreditCard = protector.Protect(RModel.CreditCard),
 					MobileNo = RModel.MobileNo,
 					BillingAddress = RModel.BillingAddress,
-					ShippingAddress = RModel.ShippingAddress
+					ShippingAddress = RModel.ShippingAddress,
+					Photo = RModel.Photo
 				};
 				var result = await userManager.CreateAsync(user, RModel.Password);
 				if (result.Succeeded)

@@ -15,5 +15,7 @@ namespace Prac_Assignment_224597H.Model
 		public string BillingAddress { get; set; }
 
 		public string ShippingAddress { get; set; }
+
+		public IFormFile Photo { get; set; }
 	}
 }
