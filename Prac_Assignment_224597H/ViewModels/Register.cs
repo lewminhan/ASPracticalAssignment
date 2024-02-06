@@ -6,25 +6,31 @@ namespace Prac_Assignment_224597H.ViewModels
 	{
 
 		[Required]
+		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
 
 		[Required]
-		public string LastName { get; set; }
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
 
 		[Required]
-		[DataType(DataType.CreditCard)]
+        [Display(Name = "Credit Card No")]
+        [DataType(DataType.CreditCard)]
 		public string CreditCard { get; set; }
 
 		[Required]
 		[Phone]
-		[DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile No")]
+        [DataType(DataType.PhoneNumber)]
 		public string MobileNo { get; set; }
 
 		[Required]
-		public string BillingAddress { get; set; }
+        [Display(Name = "Billing Address")]
+        public string BillingAddress { get; set; }
 
 		[Required]
-		public string ShippingAddress { get; set; }
+        [Display(Name = "Shipping Address")]
+        public string ShippingAddress { get; set; }
 
 		[Required]
 		[EmailAddress]
@@ -37,7 +43,8 @@ namespace Prac_Assignment_224597H.ViewModels
 		public string Password { get; set; }
 
 		[Required]
-		[DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+        [DataType(DataType.Password)]
 		[Compare(nameof(Password), ErrorMessage = "Password and confirmation password does not match")]
 		public string ConfirmPassword { get; set; }
 
