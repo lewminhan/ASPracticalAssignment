@@ -11,15 +11,18 @@ namespace Prac_Assignment_224597H.Pages
     {
 		private UserManager<ApplicationUser> userManager { get; }
 		private SignInManager<ApplicationUser> signInManager { get; }
+		private readonly string _mySecretKey;
 
 		[BindProperty]
 		public Register RModel { get; set; }
 
 		public RegisterModel(UserManager<ApplicationUser> userManager,
-		SignInManager<ApplicationUser> signInManager)
+		SignInManager<ApplicationUser> signInManager,
+		IConfiguration configuration)
 		{
 			this.userManager = userManager;
 			this.signInManager = signInManager;
+			_mySecretKey = configuration["MySettings:MySecretKey"];
 		}
 
 		public void OnGet()
@@ -31,7 +34,7 @@ namespace Prac_Assignment_224597H.Pages
 			if (ModelState.IsValid)
 			{
 				var dataProtectionProvider = DataProtectionProvider.Create("EncryptData");
-				var protector = dataProtectionProvider.CreateProtector("MySecretKey");
+				var protector = dataProtectionProvider.CreateProtector(_mySecretKey);
 
 				var user = new ApplicationUser()
 				{
@@ -43,7 +46,7 @@ namespace Prac_Assignment_224597H.Pages
 					MobileNo = RModel.MobileNo,
 					BillingAddress = RModel.BillingAddress,
 					ShippingAddress = RModel.ShippingAddress,
-					Photo = RModel.Photo
+					/*Photo = RModel.Photo*/
 				};
 				var result = await userManager.CreateAsync(user, RModel.Password);
 				if (result.Succeeded)
