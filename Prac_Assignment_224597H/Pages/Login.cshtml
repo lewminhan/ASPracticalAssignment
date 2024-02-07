@@ -2,6 +2,17 @@
 @model Prac_Assignment_224597H.Pages.LoginModel
 @{
 }
+@section scripts {
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+		function onSubmit(token) {
+			document.getElementById("loginform").submit();
+		}
+	</script>
+
+	<script src="https://www.google.com/recaptcha/api.js?render=6Lc85GkpAAAAAKwlMPu-B5yYxsjjsNxXpcJd9X51"></script>
+}
+
 
 <div class="container mt-5">
 
@@ -10,7 +21,7 @@
 		<div class="col-sm-12 col-md-12 col-lg-4">
 			<h1 class="mb-3">Login </h1>
 
-			<form method="post">
+			<form method="post" id="loginform">
 
 				<div class="mb-3">
 					<label class="form-label" asp-for="LModel.Email">Email Address</label>
@@ -30,7 +41,13 @@
 				</div>
 
 				<div class="mb-3">
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button class="g-recaptcha btn btn-primary"
+							data-sitekey="6Lc85GkpAAAAAKwlMPu-B5yYxsjjsNxXpcJd9X51"
+							data-callback='onSubmit'
+							data-action='submit' 
+							type="submit">
+						Login
+					</button>
 				</div>
 			</form>
 		</div>
